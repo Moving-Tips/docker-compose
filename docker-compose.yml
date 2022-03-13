@@ -14,24 +14,24 @@ services:
     core-api:
         image: matheusgimenez/apimovingtipscore
         ports:
-            - "3000:80"
+            - "3000:3000"
         deploy:
-            replicas: 3
+            replicas: 5
             restart_policy:
                 condition: on-failure
-                max_attempts: 3
+                max_attempts: 2
         networks:
             - movingTips
     
     district-api:
         image: matheusgimenez/apimovingtipsdistrict
         ports:
-            - "3001:80"
+            - "3001:3001"
         deploy:
-            replicas: 3
+            replicas: 5
             restart_policy:
                 condition: on-failure
-                max_attempts: 3
+                max_attempts: 2
         networks:
             - movingTips
         
